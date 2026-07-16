@@ -49,7 +49,7 @@ python3 scripts/update_repo.py
 | PPTX transitions | `pptx_transitions.py` | [docs/pptx-transitions.md](./docs/pptx-transitions.md) |
 | PPTX animations | `pptx_animations.py`, `animation_config.py` | [docs/pptx-animations.md](./docs/pptx-animations.md) |
 | Spec maintenance | `update_spec.py` | [docs/update_spec.md](./docs/update_spec.md) |
-| Image tools | `image_gen.py`, `analysis_pack.py`, `latex_render.py`, `analyze_images.py`, `gemini_watermark_remover.py` | [docs/image.md](./docs/image.md), [docs/analysis-packs.md](./docs/analysis-packs.md) |
+| Image tools | `image_gen.py`, `analysis_library.py`, `analysis_pack.py`, `latex_render.py`, `analyze_images.py`, `gemini_watermark_remover.py` | [docs/image.md](./docs/image.md), [docs/analysis-packs.md](./docs/analysis-packs.md) |
 | Repo maintenance | `update_repo.py` | README install/update section |
 | Troubleshooting | validation, preview, export, dependency issues | [docs/troubleshooting.md](./docs/troubleshooting.md) |
 
