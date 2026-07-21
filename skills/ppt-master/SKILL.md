@@ -49,6 +49,10 @@ description: >
 > - **Response language**: match the user's input and source materials. Explicit user override (e.g., "请用英文回答") takes precedence.
 > - **User-facing option labels**: when presenting confirmations, brief proposals, choices, or finite option sets, use the user's language for labels and explanations. English enum IDs / file fields may appear in parentheses for precision, but never rely on English-only labels such as `deck`, `layout`, `mirror`, or `fidelity` without a localized explanation.
 > - **Template format**: `design_spec.md` MUST follow its original English template structure (section headings, field names) regardless of conversation language. Content values may be in the user's language.
+> - **Default response mode — concise and outcome-first**: keep ordinary progress updates to one short sentence. Prefer direct statements such as “大纲已生成，请确认” or “已完成导出” over workflow narration.
+> - **Report only user-relevant state**: surface (1) a decision or input the user must provide, (2) a blocker or failure that changes the outcome, or (3) a completed deliverable. Do not narrate internal gate numbering, role switches, default provider/model profiles, reference-image counts, command sequences, backend details, file inventories, logs, or what the pipeline will do after approval unless the user asks or the information is necessary to make the current decision.
+> - **Keep confirmations minimal**: ask only for the decision, with the recommended option and concise alternatives when needed. Do not add meta-commentary such as “这是第二个也是最后一个强制确认点”, “通过后不再暂停”, or a detailed description of downstream automatic steps.
+> - **Treat workflow checklists as internal**: checkpoint blocks and completion checklists in this file are execution aids. Do not reproduce them verbatim in chat. Summarize only the result or the next required user action.
 
 > [!IMPORTANT]
 > ## 🔌 Compatibility With Generic Coding Skills
@@ -925,13 +929,7 @@ animation playback in Keynote or other presentation applications.
 
 ## Role Switching Protocol
 
-Before switching roles, **MUST first read** the corresponding reference file. Output marker:
-
-```markdown
-## [Role Switch: <Role Name>]
-📖 Reading role definition: references/<filename>.md
-📋 Current task: <brief description>
-```
+Before switching roles, **MUST first read** the corresponding reference file. Keep the switch internal by default; do not print role names, reference paths, or task metadata. If a user-facing update is useful, use one short outcome-oriented sentence such as “开始生成页面。”
 
 ---
 
